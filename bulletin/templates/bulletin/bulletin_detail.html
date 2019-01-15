@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ bulletin.title }}{% endblock title %}
+
+{% block  content %}
+  <h1>{{ bulletin.title }}</h1>
+  <div class="bulletin-data">
+    <div class="bulletin-header">
+      <h3>{{ bulletin.title }}</h3>
+      <div class="bulletin-city">City: <span class="city-name">{{ bulletin.city.name }}</span></div>
+      <div class="bulletin-autor">Author: <span class="author-name">{{ bulletin.author.username }}</span></div>
+    </div>
+    <div class="description">{{ bulletin.description }}</div>
+  </div>
+  <a href="{% url "bulletin:list" %}">Back to bulletin list</a>
+  {% endblock content %}
